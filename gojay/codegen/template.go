@@ -175,6 +175,10 @@ func ({{.Receiver}}) UnmarshalJSONObject(dec *gojay.Decoder, key string) error {
 {{.InitEmbedded}}
 	switch key {
 {{.DecodingCases}}	
+{{if .ErrOnUnknown}}
+	default:
+		return dec.makeUnknownFieldErr({{.Alias}}, key)
+{{end}}
 	}
 	return nil
 }
