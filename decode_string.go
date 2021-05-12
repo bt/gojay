@@ -98,8 +98,8 @@ func (dec *Decoder) parseEscapedString() error {
 	switch dec.data[dec.cursor] {
 	case '"':
 		dec.data[dec.cursor] = '"'
-	case '\\':
-		dec.data[dec.cursor] = '\\'
+// 	case '\\':
+// 		dec.data[dec.cursor] = '\\'
 	case '/':
 		dec.data[dec.cursor] = '/'
 	case 'b':
